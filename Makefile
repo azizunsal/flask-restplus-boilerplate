@@ -3,7 +3,7 @@
 
 IMAGENAME=flask-restplus-boilerplate
 REPO=aunsal
-VERSION=0.0.2
+VERSION=0.0.4
 IMAGEFULLNAME=${REPO}/${IMAGENAME}:${VERSION}
 DOCKER_BUILD_CONTEXT=.
 DOCKER_FILE_PATH=Dockerfile
@@ -22,6 +22,7 @@ run_dev:
 	python manage.py run
 
 run:
+	python manage.py db upgrade ; \
 	python manage.py run
 
 db_init:

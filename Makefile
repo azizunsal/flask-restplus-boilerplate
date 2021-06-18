@@ -1,6 +1,12 @@
 .ONESHELL:
 .PHONY: clean install run
 
+IMAGENAME=flask-restplus-boilerplate
+REPO=aunsal
+VERSION=0.0.1
+IMAGEFULLNAME=${REPO}/${IMAGENAME}:${VERSION}
+DOCKER_BUILD_CONTEXT=.
+DOCKER_FILE_PATH=Dockerfile
 
 clean:
 	rm -rf venv
@@ -30,5 +36,8 @@ db_info:
 	. venv/bin/activate; \
 	python ./manage.py db current
 
-docker_run:
+_run:
 	python manage.py run
+
+build:
+	docker build -t ${IMAGEFULLNAME} $(DOCKER_BUILD_CONTEXT) -f $(DOCKER_FILE_PATH)

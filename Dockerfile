@@ -9,4 +9,4 @@ ADD . /flask-proj
 
 ENV FLASK_ENV=prod
 
-ENTRYPOINT ["make","docker_run"]
+ENTRYPOINT ["make","run"]

@@ -14,7 +14,6 @@ run:
 	. venv/bin/activate; \
 	python manage.py run
 
-
 db_init:
 	. venv/bin/activate; \
 	python manage.py db init
@@ -30,3 +29,6 @@ db_upgrade:
 db_info:
 	. venv/bin/activate; \
 	python ./manage.py db current
+
+docker_run:
+	python manage.py run

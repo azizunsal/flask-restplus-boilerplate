@@ -1,0 +1,4 @@
+venv/
+# IDE related files
+.vscode
+.idea/
